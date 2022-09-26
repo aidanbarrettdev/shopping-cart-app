@@ -14,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <Navbar></Navbar>
+      <h3>cart</h3>
 
       <nav>
         <Routes>

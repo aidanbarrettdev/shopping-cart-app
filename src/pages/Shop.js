@@ -1,5 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Goods from "../componets/Goods";
+import useFetch from "../hooks/useFetch";
 
 export default function Shop() {
-  return <div>SHOP</div>;
+  const { data: goods } = useFetch("https://fakestoreapi.com/products");
+
+  return (
+    <div>
+      <div>food</div>
+
+      {goods && <Goods goods={goods} />}
+    </div>
+  );
 }
