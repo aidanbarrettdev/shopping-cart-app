@@ -8,10 +8,10 @@ export default function Navbar() {
       <Link to={"/"}>
         <div>Home</div>
       </Link>
-      <Link to={"/shop"}>
+      <Link to={"/Shop"}>
         <div>Shop</div>
       </Link>
-      <Link to={"/basket"}>
+      <Link to={"/Basket"}>
         <div>
           <AiOutlineShoppingCart size={40} />
         </div>

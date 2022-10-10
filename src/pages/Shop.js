@@ -1,15 +1,33 @@
-import React, { useEffect, useState } from "react";
-import Goods from "../componets/Goods";
-import useFetch from "../hooks/useFetch";
-
-export default function Shop() {
-  const { data: goods } = useFetch("https://fakestoreapi.com/products");
+import Checkout from "../componets/Checkout";
+import { useState } from "react";
+export default function Shop({ cart, setCart, addToCart, goods }) {
+  const [cartClicked, setCartClicked] = useState(false);
+  function handleCheckoutOpen() {
+    console.log("cart open");
+    setCartClicked(true);
+  }
+  function handleCheckoutClose() {
+    console.log("cart close");
+    setCartClicked(false);
+  }
 
   return (
     <div>
-      <div>food</div>
-
-      {goods && <Goods goods={goods} />}
+      <button onClick={handleCheckoutOpen}>cart clicked</button>
+      <button onClick={handleCheckoutClose}>X</button>
+      {cartClicked ? <Checkout cart={cart} /> : null}
+      <div className="goods-componet-box">
+        {goods.map((data) => (
+          <div className="goods-componet" key={Math.random() * 1000000}>
+            <h2>{data.title}</h2>
+            <img src={data.image} alt={data.title} />
+            <p>£{data.price}</p>
+            <button onClick={() => addToCart(data)} className="add-to-cart-btn">
+              +
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

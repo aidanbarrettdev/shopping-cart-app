@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
+  const [isPending, setIsPending] = useState(true);
   useEffect(() => {
     fetch(url)
       .then((res) => {
@@ -9,9 +10,10 @@ const useFetch = (url) => {
       })
       .then((data) => {
         setData(data);
+        setIsPending(false);
       });
   }, [url]);
-  return { data };
+  return { data, isPending };
 };
 
 export default useFetch;
