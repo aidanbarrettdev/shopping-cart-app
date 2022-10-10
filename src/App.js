@@ -11,7 +11,7 @@ import Men from "./pages/Men";
 import Women from "./pages/Women";
 import ShopNav from "./componets/ShopNav";
 import Basket from "./pages/basket";
-
+//////////////////////////////////////////////////////third
 function App() {
   const [goods] = useState([
     {
