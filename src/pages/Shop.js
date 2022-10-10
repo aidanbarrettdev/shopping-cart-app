@@ -1,6 +1,7 @@
 import Checkout from "../componets/Checkout";
 import { useState } from "react";
-export default function Shop({ cart, setCart, addToCart, goods }) {
+
+export default function Shop({ cart, setCart, addToCart, goods, isPending }) {
   const [cartClicked, setCartClicked] = useState(false);
   function handleCheckoutOpen() {
     console.log("cart open");
@@ -13,6 +14,7 @@ export default function Shop({ cart, setCart, addToCart, goods }) {
 
   return (
     <div>
+      {isPending && <div>Loading...</div>}
       <button onClick={handleCheckoutOpen}>cart clicked</button>
       <button onClick={handleCheckoutClose}>X</button>
       {cartClicked ? <Checkout cart={cart} /> : null}
