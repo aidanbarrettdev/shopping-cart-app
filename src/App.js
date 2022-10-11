@@ -14,17 +14,33 @@ import Basket from "./pages/basket";
 import useFetch from "./hooks/useFetch";
 
 function App() {
-  const { data: goods, isPending } = useFetch(
-    "https://fakestoreapi.com/products"
+  const { data: jeweleryGoods, isPending } = useFetch(
+    "https://fakestoreapi.com/products/category/jewelery"
+  );
+  const { data: mensGoods } = useFetch(
+    "https://fakestoreapi.com/products/category/men's clothing"
+  );
+  const { data: womensGoods } = useFetch(
+    "https://fakestoreapi.com/products/category/women's clothing"
   );
   const [cart, setCart] = useState([]);
+  const [cartClicked, setCartClicked] = useState(false);
 
   const addToCart = (data) => {
     console.log("click");
-
     setCart([...cart, data]);
     console.log(cart);
   };
+
+  function handleCheckoutOpen() {
+    console.log("cart open");
+    setCartClicked(true);
+  }
+
+  function handleCheckoutClose() {
+    console.log("cart close");
+    setCartClicked(false);
+  }
 
   return (
     <div className="App">
@@ -36,22 +52,54 @@ function App() {
           <Route path="/Basket" element={<Basket cart={cart} />}></Route>
 
           <Route path="/Shop" element={<ShopNav />}>
+            <Route index element={<Shop />} />
             <Route
-              index
+              path="Men"
               element={
-                <Shop
+                <Men
+                  mensGoods={mensGoods}
                   cart={cart}
                   setCart={setCart}
                   addToCart={addToCart}
-                  goods={goods}
                   isPending={isPending}
+                  handleCheckoutClose={handleCheckoutClose}
+                  handleCheckoutOpen={handleCheckoutOpen}
+                  cartClicked={cartClicked}
                 />
               }
             />
-            <Route path="Men" element={<Men />} />
-            <Route path="Women" element={<Women />} />
 
-            <Route path="Jewelery" element={<Jewelery />} />
+            <Route
+              path="Women"
+              element={
+                <Women
+                  womensGoods={womensGoods}
+                  cart={cart}
+                  setCart={setCart}
+                  addToCart={addToCart}
+                  isPending={isPending}
+                  handleCheckoutClose={handleCheckoutClose}
+                  handleCheckoutOpen={handleCheckoutOpen}
+                  cartClicked={cartClicked}
+                />
+              }
+            />
+
+            <Route
+              path="Jewelery"
+              element={
+                <Jewelery
+                  jeweleryGoods={jeweleryGoods}
+                  cart={cart}
+                  setCart={setCart}
+                  addToCart={addToCart}
+                  isPending={isPending}
+                  handleCheckoutClose={handleCheckoutClose}
+                  handleCheckoutOpen={handleCheckoutOpen}
+                  cartClicked={cartClicked}
+                />
+              }
+            />
           </Route>
         </Routes>
       </nav>
