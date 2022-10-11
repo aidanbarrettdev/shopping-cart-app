@@ -1,6 +1,6 @@
 import React from "react";
-// import "../App.js";
-export default function Basket({ cart }) {
+
+export default function Basket({ cart, totalPrice }) {
   return (
     <div>
       {cart.length === 0 && <div className="empty-cart"> No items in cart</div>}
@@ -14,6 +14,14 @@ export default function Basket({ cart }) {
           </div>
         ))}
       </div>
+      <div>Order Total: £{totalPrice()}</div>
+      <button
+        style={{
+          backgroundColor: "lightgreen",
+        }}
+      >
+        Continue to Payment
+      </button>
     </div>
   );
 }

@@ -1,12 +1,10 @@
 import "./App.css";
-
 import React, { useState } from "react";
 import Shop from "./pages/Shop";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./componets/Navbar";
 import Jewelery from "./pages/Jewelery";
-
 import Men from "./pages/Men";
 import Women from "./pages/Women";
 import ShopNav from "./componets/ShopNav";
@@ -28,18 +26,27 @@ function App() {
 
   const addToCart = (data) => {
     console.log("click");
-    setCart([...cart, data]);
+    setCart([...cart, { ...data }]);
     console.log(cart);
   };
 
   function handleCheckoutOpen() {
     console.log("cart open");
     setCartClicked(true);
+    const exitCheckoutBtn = document.querySelector(".exit-checkout-btn");
+    exitCheckoutBtn.style.backgroundColor = "red";
+    exitCheckoutBtn.style.color = "white";
   }
 
   function handleCheckoutClose() {
     console.log("cart close");
     setCartClicked(false);
+    const exitCheckoutBtn = document.querySelector(".exit-checkout-btn");
+    exitCheckoutBtn.style.backgroundColor = "white";
+    exitCheckoutBtn.style.color = "black";
+  }
+  function totalPrice() {
+    return cart.reduce((sum, { price }) => sum + price, 0);
   }
 
   return (
@@ -49,7 +56,10 @@ function App() {
       <nav>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/Basket" element={<Basket cart={cart} />}></Route>
+          <Route
+            path="/Basket"
+            element={<Basket cart={cart} totalPrice={totalPrice} />}
+          ></Route>
 
           <Route path="/Shop" element={<ShopNav />}>
             <Route index element={<Shop />} />
@@ -65,6 +75,7 @@ function App() {
                   handleCheckoutClose={handleCheckoutClose}
                   handleCheckoutOpen={handleCheckoutOpen}
                   cartClicked={cartClicked}
+                  totalPrice={totalPrice}
                 />
               }
             />
@@ -81,6 +92,7 @@ function App() {
                   handleCheckoutClose={handleCheckoutClose}
                   handleCheckoutOpen={handleCheckoutOpen}
                   cartClicked={cartClicked}
+                  totalPrice={totalPrice}
                 />
               }
             />
@@ -97,6 +109,7 @@ function App() {
                   handleCheckoutClose={handleCheckoutClose}
                   handleCheckoutOpen={handleCheckoutOpen}
                   cartClicked={cartClicked}
+                  totalPrice={totalPrice}
                 />
               }
             />

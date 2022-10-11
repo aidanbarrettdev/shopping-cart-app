@@ -1,25 +1,34 @@
 import React from "react";
-
-export default function Checkout({ cart }) {
-  function removeItem() {
-    //filter
+import "./checkout.css";
+export default function Checkout({ cart, setCart, totalPrice }) {
+  const removeItem = (itemToRemove) => {
+    setCart(cart.filter((data) => data !== itemToRemove));
+  };
+  function clearAll() {
+    setCart([]);
   }
+
   return (
     <div>
       {cart.length === 0 && <div className="empty-cart"> No items in cart</div>}
-      <div className="goods-componet-box">
+      <button onClick={clearAll}>Clear All</button>
+      <div>Total : £{totalPrice()}</div>
+      <div className="checkout-box">
         {cart.map((data) => (
-          <div className="goods-componet" key={Math.random() * 1000000}>
+          <div className="checkout-componet" key={Math.random() * 1000000}>
             <h2>{data.title}</h2>
-            <h4>ok i here</h4>
+
             <img src={data.image} alt={data.title} />
             <p>£{data.price}</p>
-            <button onClick={removeItem}>X</button>
+            <button
+              className="checkout-remove-item-btn"
+              onClick={() => removeItem(data)}
+            >
+              X
+            </button>
           </div>
         ))}
       </div>
     </div>
   );
 }
-
-//checkout css pop up grey background

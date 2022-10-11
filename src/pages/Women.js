@@ -3,18 +3,22 @@ import Checkout from "../componets/Checkout";
 export default function Women({
   womensGoods,
   cart,
+  setCart,
   addToCart,
   isPending,
   handleCheckoutClose,
   handleCheckoutOpen,
   cartClicked,
+  totalPrice,
 }) {
   return (
     <div>
       {isPending && <div>Loading...</div>}
       <button onClick={handleCheckoutOpen}>View Cart ({cart.length})</button>
       <button onClick={handleCheckoutClose}>X</button>
-      {cartClicked ? <Checkout cart={cart} /> : null}
+      {cartClicked ? (
+        <Checkout cart={cart} setCart={setCart} totalPrice={totalPrice} />
+      ) : null}
       <div className="goods-componet-box">
         {womensGoods.map((data) => (
           <div className="goods-componet" key={Math.random() * 1000000}>

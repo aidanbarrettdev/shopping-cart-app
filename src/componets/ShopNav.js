@@ -5,7 +5,6 @@ export default function ShopNav() {
     <div>
       <Link to="/Shop/Men"> MENS</Link>
       <Link to="/Shop/Women"> WOMENS</Link>
-
       <Link to="/Shop/Jewelery"> JEWELERY</Link>
       <Outlet />
     </div>
