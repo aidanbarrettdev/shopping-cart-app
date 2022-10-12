@@ -1,0 +1,15 @@
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.home-page img {
+  margin-top: 100px;
+  width: 1000px;
+}
+
+.home-page h1 {
+  font-size: 100px;
+  text-decoration: none;
+}

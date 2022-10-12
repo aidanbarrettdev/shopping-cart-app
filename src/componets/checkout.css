@@ -2,3 +2,73 @@
   color: white;
   background-color: red;
 }
+.checkout-container {
+  background-color: rgb(249, 244, 244);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid white;
+  border-radius: 15px;
+  width: 600px;
+  max-width: 75%;
+  min-height: 50%;
+  font-size: 12px;
+}
+.checkout-container img {
+  width: 90px;
+  height: 70px;
+  margin-left: 10px;
+  margin-right: 50px;
+}
+.header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 5px solid purple;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: rgb(39, 33, 33);
+  color: white;
+}
+.header button {
+  background-color: white;
+}
+.header button:hover {
+  background-color: red;
+  color: white;
+}
+.total {
+  border: 1px solid purple;
+  padding: 5px;
+  margin-top: 10px;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  border-radius: 5px;
+}
+
+.checkout-componet {
+  display: flex;
+  align-items: center;
+
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.checkout-componet p {
+  font-size: 18px;
+  margin-right: 10px;
+}
+.overlay {
+  position: fixed;
+  top: 70%;
+  left: 70%;
+  transform: translate(-70%, -70%);
+  background-color: rgba(5, 4, 4, 0.745);
+  width: 90vw;
+  height: 90vh;
+  border-radius: 30px;
+}

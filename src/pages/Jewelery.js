@@ -15,9 +15,14 @@ export default function Jewelery({
     <div>
       {isPending && <div>Loading...</div>}
       <button onClick={handleCheckoutOpen}>View Cart ({cart.length})</button>
-      <button onClick={handleCheckoutClose}>X</button>
+
       {cartClicked ? (
-        <Checkout cart={cart} setCart={setCart} totalPrice={totalPrice} />
+        <Checkout
+          cart={cart}
+          setCart={setCart}
+          totalPrice={totalPrice}
+          handleCheckoutClose={handleCheckoutClose}
+        />
       ) : null}
       <div className="goods-componet-box">
         {jeweleryGoods.map((data) => (
