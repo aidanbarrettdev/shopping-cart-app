@@ -29,3 +29,17 @@
   font-style: italic;
   color: rgba(0, 0, 0, 0.291);
 }
+@media only screen and (max-width: 600px) {
+  .home-page h1 {
+    font-size: 30px;
+  }
+  .home-img-text {
+    font-size: 18px;
+    top: 38%;
+  }
+  .home-page img {
+    margin-top: 20px;
+    width: 80vw;
+    height: 30vh;
+  }
+}

@@ -3,8 +3,10 @@ import "./footer.css";
 export default function Footer() {
   return (
     <div className="footer">
-      <div>aidbarrett94@gmail.com</div>
-      <div>aidbarrett94@gmail.com</div>
+      <p>aidbarrett94@gmail.com</p>
+      <p>
+        <a href="https://github.com/aidanbarrettdev">Github</a>
+      </p>
     </div>
   );
 }

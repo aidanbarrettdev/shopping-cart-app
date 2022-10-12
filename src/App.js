@@ -46,7 +46,7 @@ function App() {
     exitCheckoutBtn.style.color = "black";
   }
   function totalPrice() {
-    return cart.reduce((sum, { price }) => sum + price, 0);
+    return cart.reduce((sum, { price }) => sum + price, 0).toFixed(2);
   }
 
   return (

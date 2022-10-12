@@ -38,5 +38,8 @@
 }
 .veiw-cart-btn {
   border: none;
+  background-color: white;
   border-bottom: 2px solid purple;
+  padding: 10px;
+  margin-left: 20px;
 }
