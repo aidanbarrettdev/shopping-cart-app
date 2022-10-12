@@ -14,7 +14,9 @@ export default function Jewelery({
   return (
     <div>
       {isPending && <div>Loading...</div>}
-      <button onClick={handleCheckoutOpen}>View Cart ({cart.length})</button>
+      <button className="veiw-cart-btn" onClick={handleCheckoutOpen}>
+        View Cart ({cart.length})
+      </button>
 
       {cartClicked ? (
         <Checkout

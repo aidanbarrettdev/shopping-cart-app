@@ -13,7 +13,7 @@ export default function Navbar() {
       </Link>
       <Link to={"/Basket"}>
         <div>
-          <AiOutlineShoppingCart size={40} />
+          <AiOutlineShoppingCart size={30} />
         </div>
       </Link>
     </div>

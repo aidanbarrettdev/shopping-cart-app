@@ -1,6 +1,7 @@
 .checkout-remove-item-btn {
   color: white;
   background-color: red;
+  border: none;
 }
 .checkout-container {
   background-color: rgb(249, 244, 244);
@@ -34,6 +35,8 @@
   color: white;
 }
 .header button {
+  border: none;
+  border-radius: 5px;
   background-color: white;
 }
 .header button:hover {
@@ -41,19 +44,18 @@
   color: white;
 }
 .total {
-  border: 1px solid purple;
-  padding: 5px;
-  margin-top: 10px;
-  position: fixed;
-  bottom: 5px;
-  right: 5px;
+  border-bottom: 2px solid purple;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  font-size: 15px;
   border-radius: 5px;
 }
 
 .checkout-componet {
   display: flex;
   align-items: center;
-
+  justify-content: space-around;
   padding: 10px;
   border-bottom: 1px solid black;
 }

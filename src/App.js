@@ -8,9 +8,9 @@ import Jewelery from "./pages/Jewelery";
 import Men from "./pages/Men";
 import Women from "./pages/Women";
 import ShopNav from "./componets/ShopNav";
-import Basket from "./pages/basket";
+import Basket from "./pages/Basket";
 import useFetch from "./hooks/useFetch";
-
+import Footer from "./componets/Footer";
 function App() {
   const { data: jeweleryGoods, isPending } = useFetch(
     "https://fakestoreapi.com/products/category/jewelery"
@@ -116,6 +116,7 @@ function App() {
           </Route>
         </Routes>
       </nav>
+      <Footer></Footer>
     </div>
   );
 }

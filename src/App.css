@@ -1,8 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 .goods-componet-box {
+  margin-top: 40px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .goods-componet img {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
+}
+.goods-componet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  width: 400px;
+  border-bottom: 1px solid purple;
+  margin: 5px;
+  padding: 10px;
+}
+.goods-componet button {
+  background-color: rgb(133, 65, 133);
+  color: white;
+  width: 50px;
+  font-size: 25px;
+  font-weight: bolder;
+  border: none;
+}
+.goods-componet button:hover {
+  background-color: purple;
+}
+.veiw-cart-btn {
+  border: none;
+  border-bottom: 2px solid purple;
 }
