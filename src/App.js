@@ -4,7 +4,7 @@ import Shop from "./pages/Shop";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./componets/Navbar";
-import Jewelery from "./pages/Jewelery";
+import Jewellery from "./pages/Jewellery";
 import Men from "./pages/Men";
 import Women from "./pages/Women";
 import ShopNav from "./componets/ShopNav";
@@ -12,7 +12,7 @@ import Basket from "./pages/Basket";
 import useFetch from "./hooks/useFetch";
 import Footer from "./componets/Footer";
 function App() {
-  const { data: jeweleryGoods, isPending } = useFetch(
+  const { data: jewelleryGoods, isPending } = useFetch(
     "https://fakestoreapi.com/products/category/jewelery"
   );
   const { data: mensGoods } = useFetch(
@@ -98,10 +98,10 @@ function App() {
             />
 
             <Route
-              path="Jewelery"
+              path="Jewellery"
               element={
-                <Jewelery
-                  jeweleryGoods={jeweleryGoods}
+                <Jewellery
+                  jewelleryGoods={jewelleryGoods}
                   cart={cart}
                   setCart={setCart}
                   addToCart={addToCart}

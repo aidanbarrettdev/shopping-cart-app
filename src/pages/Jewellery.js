@@ -1,7 +1,7 @@
 import React from "react";
 import Checkout from "../componets/Checkout";
-export default function Jewelery({
-  jeweleryGoods,
+export default function Jewellery({
+  jewelleryGoods,
   cart,
   setCart,
   addToCart,
@@ -27,7 +27,7 @@ export default function Jewelery({
         />
       ) : null}
       <div className="goods-componet-box">
-        {jeweleryGoods.map((data) => (
+        {jewelleryGoods.map((data) => (
           <div className="goods-componet" key={Math.random() * 1000000}>
             <h2>{data.title}</h2>
             <img src={data.image} alt={data.title} />
