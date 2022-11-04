@@ -1,0 +1,16 @@
+.shop-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.shop-page img {
+  margin-top: 30px;
+  width: 1000px;
+}
+.shop-page h1 {
+  font-style: italic;
+  margin-top: 20px;
+  border-bottom: 1px solid black;
+  font-size: 20px;
+}

@@ -1,0 +1,107 @@
+.checkout-remove-item-btn {
+  color: white;
+  background-color: red;
+  border: none;
+}
+.checkout-container {
+  background-color: rgb(249, 244, 244);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid white;
+  border-radius: 15px;
+  width: 600px;
+  max-width: 75%;
+  min-height: 50%;
+  font-size: 12px;
+  max-height: 80%;
+  overflow: scroll;
+}
+.checkout-container img {
+  width: 90px;
+  height: 70px;
+  margin-left: 10px;
+  margin-right: 50px;
+}
+.header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 5px solid purple;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: rgb(39, 33, 33);
+  color: white;
+}
+.header button {
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+}
+.header button:hover {
+  background-color: red;
+  color: white;
+}
+.total {
+  border-bottom: 2px solid purple;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.checkout-componet {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.checkout-componet p {
+  font-size: 18px;
+  margin-right: 10px;
+}
+.overlay {
+  position: fixed;
+  top: 70%;
+  left: 70%;
+  transform: translate(-70%, -70%);
+  background-color: rgba(5, 4, 4, 0.745);
+  width: 90vw;
+  height: 90vh;
+  border-radius: 30px;
+}
+@media only screen and (max-width: 600px) {
+  .overlay {
+    position: fixed;
+    top: 80%;
+    left: 72%;
+    transform: translate(-80%, -70%);
+    background-color: rgba(5, 4, 4, 0.745);
+    width: 100vw;
+    height: 100vh;
+  }
+  .checkout-container img {
+    width: 70px;
+    height: 50px;
+  }
+  .checkout-container {
+    background-color: rgb(249, 244, 244);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid white;
+    border-radius: 15px;
+
+    max-width: 80%;
+    min-height: 60%;
+
+    font-size: 9px;
+  }
+}

@@ -1,8 +1,7 @@
 import React from "react";
 import Checkout from "../componets/Checkout";
-import "../componets/checkout.css";
-export default function Men({
-  mensGoods,
+export default function Jewellery({
+  jewelleryGoods,
   cart,
   setCart,
   addToCart,
@@ -18,6 +17,7 @@ export default function Men({
       <button className="veiw-cart-btn" onClick={handleCheckoutOpen}>
         View Cart ({cart.length})
       </button>
+
       {cartClicked ? (
         <Checkout
           cart={cart}
@@ -27,7 +27,7 @@ export default function Men({
         />
       ) : null}
       <div className="goods-componet-box">
-        {mensGoods.map((data) => (
+        {jewelleryGoods.map((data) => (
           <div className="goods-componet" key={Math.random() * 1000000}>
             <h2>{data.title}</h2>
             <img src={data.image} alt={data.title} />

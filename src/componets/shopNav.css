@@ -1,0 +1,8 @@
+.shop-nav a {
+  display: flex;
+  justify-content: space-evenly;
+  text-decoration: none;
+  background-color: rgb(84, 61, 85);
+  color: white;
+  padding: 10px;
+}

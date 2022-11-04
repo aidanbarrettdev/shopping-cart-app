@@ -1,12 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
-
+import "./shopNav.css";
 export default function ShopNav() {
   return (
-    <div>
-      <Link to="/shop/Men"> MENS</Link>
-      <Link to="/shop/Women"> WOMENS</Link>
-      <Link to="/shop/Electronics"> ELECTRONICS</Link>
-      <Link to="/shop/Jewelery"> JEWELERY</Link>
+    <div className="shop-nav">
+      <Link to="/Shop/Men"> MEN'S</Link>
+      <Link to="/Shop/Women"> WOMEN'S</Link>
+      <Link to="/Shop/Jewellery"> JEWELLERY</Link>
       <Outlet />
     </div>
   );
