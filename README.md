@@ -1,10 +1,10 @@
-Shopping cart App
+### Shopping cart App
 
 A shop store that uses a custom hook to fetch data from an API.
 
 
 
-Functionality
+### Functionality
 
 
 allows users to :
@@ -18,6 +18,6 @@ allows users to :
 - sums up the total price of goods in the cart
 
 
-Technologies
+### Technologies
 
 REACT, REACT ROUTER, CSS
